@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    //string image = "~/images/" + Model.ZodiacSign.ToLower() + ".png";
+    //ViewData["images"] = image;
+}
+
+<div class="text-center">
+    <form method="post">
+	<div class="form-group">
+		<label asp-for="yearInput" class="control-label">Year: </label>
+		<input asp-for="yearInput" class="form-control" />
+	</div>
+
+    <div class="form-group">
+        <br />
+		<input type="submit" value="Calculate" class="btn btn-primary" />
+		<a asp-action="Index" class="btn btn-success">Clear</a>
+	</div>
+    </form>
+
+    <div>
+        <strong>@Model.ZodiacSign</strong>
+        <img src="@Model.imageSrc" alt="@Model.ZodiacSign" />
+    </div>
+</div>
